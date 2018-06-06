@@ -77,7 +77,8 @@ public class Enemy : MonoBehaviour {
 		if (hp <= 0)
 		{
 			Die();
-		}
+            BuildManager.manager.ChangeMoney(100);
+        }
 	}
 
 	// 敌人死亡
