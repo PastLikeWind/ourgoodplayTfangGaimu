@@ -10,6 +10,7 @@ public class MapCube : MonoBehaviour {
 	public GameObject turretGo; // 当前cube下的炮塔，如果为空，则表示当前位置没有炮塔
 	[HideInInspector] // [HideInInspector]可以隐藏这个public属性显示在inspector面板
 	public bool isUpgraded = false; // 炮塔是否已经升级过
+    public int upgradeLevel = 0; //炮塔的等级
 	public GameObject buildEffect; // 构建炮塔的特效预制体
 	private Renderer cubeRenderer; // 渲染器
 	public TurretData turretData; // 当前cube下的炮塔数据
@@ -54,6 +55,7 @@ public class MapCube : MonoBehaviour {
 		// 已经升级过
 		if (isUpgraded)
 		{
+            upgradeLevel += 1;
 			return;
 		}
 

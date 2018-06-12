@@ -7,20 +7,27 @@ using UnityEngine.UI;
 // 建造炮塔管理类
 public class BuildManager : MonoBehaviour {
 
-	public TurretData laserTurretData; // 激光炮塔数据
+    public static BuildManager manager;
+
+    public TurretData laserTurretData; // 激光炮塔数据
 	public TurretData missileTurretData; // 炮弹炮塔数据
 	public TurretData standardTurretData; // 标准炮塔数据
 	private TurretData selectedTurretData; // 当前选择的炮塔数据，将要建造
 	private MapCube selectedMapCube; // 当前选择的炮塔所在的cube，选择炮塔会显示或隐藏升级UI
 	public Text moneyText; // 显示金钱的文本
 	public Animator moneyAnimator; // 金钱动画状态机
-	private int money = 100000; // 金钱
+	private int money = 1000; // 金钱
 	public GameObject upgradeCanvas; // 升级炮塔的画布UI
 	public Button upgradeButton; // 升级按钮
 	public Animator upgradeCanvasAnimator; // 炮塔升级画布的状态机
-	
-	// 金钱发生变化
-	void ChangeMoney(int change)
+
+    private void Awake()
+    {
+        manager = this;
+    }
+
+    // 金钱发生变化
+    public void ChangeMoney(int change)
 	{
 		money += change;
 		// 修改金钱UI
