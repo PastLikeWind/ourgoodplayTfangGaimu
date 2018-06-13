@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour {
 		GameManager.instance.Win();
 	}
 
-    private void set EnemyProps()
+    private void EnemyProps()
     {
 
     }
