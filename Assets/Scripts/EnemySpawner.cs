@@ -61,6 +61,11 @@ public class EnemySpawner : MonoBehaviour {
 		GameManager.instance.Win();
 	}
 
+    private void set EnemyProps()
+    {
+
+    }
+
 	// 停止生成敌人
 	public void Stop()
 	{

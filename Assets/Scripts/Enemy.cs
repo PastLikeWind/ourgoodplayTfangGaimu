@@ -11,7 +11,11 @@ public class Enemy : MonoBehaviour {
 	public float hp = 150; // 敌人血量
 	public Slider hpSlider; // 血条
 	public float speed = 10; // 移动速度
-	public GameObject explosionEffectPrefab; // 敌人死亡爆炸特效
+    public int physicalDefence = 10;
+    public int magicDefence = 10;
+    public int exp = 1000;
+    public int money = 20;
+    public GameObject explosionEffectPrefab; // 敌人死亡爆炸特效
 	private Transform[] positions; // 所有路径点
 	private int index = 0; // 当前正在像哪个点移动-
 	void Start() 
@@ -77,7 +81,7 @@ public class Enemy : MonoBehaviour {
 		if (hp <= 0)
 		{
 			Die();
-            BuildManager.manager.ChangeMoney(100);
+            BuildManager.manager.ChangeMoney(money);
         }
 	}
 
